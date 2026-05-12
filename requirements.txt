@@ -1,0 +1,64 @@
+absl-py==2.3.1
+autoattack @ git+https://github.com/fra31/auto-attack@a39220048b3c9f2cca9a4d3a54604793c68eca7e
+beautifulsoup4==4.13.4
+Brotli @ file:///croot/brotli-split_1714483155106/work
+cachetools==5.5.2
+certifi @ file:///croot/certifi_1725551672989/work/certifi
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+clip @ git+https://github.com/openai/CLIP.git@dcba3cb2e2827b402d2701e7e1c7d9fed8a20ef1
+einops==0.8.1
+filelock @ file:///croot/filelock_1700591183607/work
+fsspec==2025.3.0
+ftfy==6.2.3
+gdown==5.2.0
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455532332/work
+google-auth==2.40.3
+google-auth-oauthlib==1.0.0
+grpcio==1.70.0
+h5py==3.11.0
+hf-xet==1.1.8
+huggingface-hub==0.34.4
+idna @ file:///croot/idna_1714398848350/work
+importlib_metadata==8.5.0
+importlib_resources==6.4.5
+Jinja2 @ file:///croot/jinja2_1716993405101/work
+Markdown==3.7
+MarkupSafe @ file:///croot/markupsafe_1704205993651/work
+mkl-fft @ file:///croot/mkl_fft_1695058164594/work
+mkl-random @ file:///croot/mkl_random_1695059800811/work
+mkl-service==2.4.0
+mpmath @ file:///croot/mpmath_1690848262763/work
+networkx @ file:///croot/networkx_1690561992265/work
+numpy @ file:///work/mkl/numpy_and_numpy_base_1682953417311/work
+oauthlib==3.3.1
+opencv-python==4.12.0.88
+packaging==24.2
+pillow @ file:///croot/pillow_1721059439630/work
+protobuf==5.29.5
+pyasn1==0.6.1
+pyasn1_modules==0.4.2
+pycountry==24.6.1
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
+PyYAML @ file:///croot/pyyaml_1728657952215/work
+regex==2024.11.6
+requests @ file:///croot/requests_1721410876868/work
+requests-oauthlib==2.0.0
+rsa==4.9.1
+safetensors==0.5.3
+scipy==1.10.1
+soupsieve==2.7
+sympy @ file:///croot/sympy_1734622612703/work
+tensorboard==2.14.0
+tensorboard-data-server==0.7.2
+timm==1.0.19
+torch==2.4.1
+torchaudio==2.4.1
+torchvision==0.19.1
+tqdm==4.67.1
+triton==3.0.0
+ttach==0.0.3
+typing_extensions @ file:///croot/typing_extensions_1715268824938/work
+urllib3 @ file:///croot/urllib3_1727769808118/work
+wcwidth==0.2.13
+Werkzeug==3.0.6
+zipp==3.20.2

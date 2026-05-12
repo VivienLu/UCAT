@@ -1,0 +1,11 @@
+name: zsar
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - cudatoolkit=10.2
+  - pytorch==2.4.1
+  - torchvision==0.19.1
+  - pytorch-cuda=12.1
+  - torchaudio==2.4.1
+prefix: /work1/wenjing/miniconda/envs/zsar
