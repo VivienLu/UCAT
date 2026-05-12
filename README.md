@@ -1,6 +1,6 @@
 # Calibrating Uncertainty for Zero-Shot Adversarial CLIP
 
-[![ICML2026](https://img.shields.io/badge/ICML-2026-blue)](https://icml.cc/virtual/2026/poster/62864)[![arXiv](https://img.shields.io/badge/arXiv-2512.12997-red)](https://arxiv.org/abs/2512.12997)
+[![ICML2026](https://img.shields.io/badge/ICML-2026-blue)](https://icml.cc/virtual/2026/poster/62864)  [![arXiv](https://img.shields.io/badge/arXiv-2512.12997-red)](https://arxiv.org/abs/2512.12997)
 
 Pytorch implementation of our method for ICML 2026 paper: "Calibrating Uncertainty for Zero-Shot Adversarial CLIP".
 
@@ -16,7 +16,7 @@ Pytorch implementation of our method for ICML 2026 paper: "Calibrating Uncertain
 
 ## Abstract
 
-![avatar](./Figure/1_conceptual.pdf)
+![avatar](./Figure/2_overallframework.pdf)
 
 CLIP delivers strong zero-shot classification but remains highly vulnerable to adversarial attacks. Prior adversarial fine-tuning work largely focuses on matching the predicted logits between clean and adversarial examples, which overlooks uncertainty calibration and may degrade the zero-shot generalization. A common expectation in reliable uncertainty estimation is that predictive uncertainty should increase as inputs become more difficult or shift away from the training distribution. However, we frequently observe the opposite in the adversarial setting: perturbations not only degrade accuracy but also suppress uncertainty, leading to severe miscalibration and unreliable over-confidence. This overlooked phenomenon highlights a critical reliability gap beyond robustness. To bridge this gap, we propose a novel adversarial fine-tuning objective for CLIP considering both prediction accuracy and uncertainty alignments. By reparameterizing the output of CLIP as the concentration parameter of a Dirichlet distribution, we propose a unified representation that captures relative semantic structure and confidence magnitude. Our objective aligns these distributions holistically under perturbations, moving beyond single-logit anchoring and restoring calibrated uncertainty. Experiments on multiple zero-shot classification benchmarks demonstrate that our approach effectively restores calibrated uncertainty and achieves competitive adversarial robustness while maintaining clean accuracy. 
 
