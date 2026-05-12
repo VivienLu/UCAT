@@ -1,16 +1,24 @@
 # Calibrating Uncertainty for Zero-Shot Adversarial CLIP
 
-This repository contains the official code for **Calibrating Uncertainty for Zero-Shot Adversarial CLIP (UCAT)**.
+[![ICML2026](https://img.shields.io/badge/ICML-2026-blue)](https://icml.cc/virtual/2026/poster/62864)[![arXiv](https://img.shields.io/badge/arXiv-2512.12997-red)](https://arxiv.org/abs/2512.12997)
 
-- Paper: [arXiv:2512.12997](https://arxiv.org/abs/2512.12997)
-- Authors: Wenjing Lu, Zerui Tao, Dongping Zhang, Yuning Qiu, Yang Yang, Qibin Zhao
-- Base code: this implementation is developed on top of **TGA-ZSR**
+Pytorch implementation of our method for ICML 2026 paper: "Calibrating Uncertainty for Zero-Shot Adversarial CLIP".
 
-UCAT improves zero-shot adversarial robustness for CLIP by calibrating the uncertainty of adversarial predictions against a frozen clean reference model. The current codebase includes:
 
-- Single-label training and evaluation in [`main.py`](/Users/luwenjing/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/ICML2026/UCAT/main.py)
-- Multi-label evaluation in [`main-multilabel.py`](/Users/luwenjing/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/ICML2026/UCAT/main-multilabel.py)
-- Adversarial attacks including `pgd`, `CW`, `autoattack`, `CAA`, and `a3`
+## Contents
+
+- [Abstract](##Abstract)
+- [Environment](##Environment)
+- [Datasets](##Datasets)
+- [Usage](##Usage)
+- [Visualization](##Visualization)
+- [Acknowledgment](##Acknowledgment)
+
+## Abstract
+
+![avatar](./Figure/1_conceptual.pdf)
+
+CLIP delivers strong zero-shot classification but remains highly vulnerable to adversarial attacks. Prior adversarial fine-tuning work largely focuses on matching the predicted logits between clean and adversarial examples, which overlooks uncertainty calibration and may degrade the zero-shot generalization. A common expectation in reliable uncertainty estimation is that predictive uncertainty should increase as inputs become more difficult or shift away from the training distribution. However, we frequently observe the opposite in the adversarial setting: perturbations not only degrade accuracy but also suppress uncertainty, leading to severe miscalibration and unreliable over-confidence. This overlooked phenomenon highlights a critical reliability gap beyond robustness. To bridge this gap, we propose a novel adversarial fine-tuning objective for CLIP considering both prediction accuracy and uncertainty alignments. By reparameterizing the output of CLIP as the concentration parameter of a Dirichlet distribution, we propose a unified representation that captures relative semantic structure and confidence magnitude. Our objective aligns these distributions holistically under perturbations, moving beyond single-logit anchoring and restoring calibrated uncertainty. Experiments on multiple zero-shot classification benchmarks demonstrate that our approach effectively restores calibrated uncertainty and achieves competitive adversarial robustness while maintaining clean accuracy. 
 
 ## Environment
 
@@ -38,7 +46,7 @@ Recommended software stack from the current repository:
 - TorchVision 0.19.1
 - CUDA-enabled GPU
 
-## Repository Structure
+### Repository Structure
 
 ```text
 UCAT/
@@ -54,7 +62,7 @@ UCAT/
 └── torchattacks/            # bundled attack implementations
 ```
 
-## Data Preparation
+## Dataset
 
 The code supports the following datasets in the current implementation:
 
@@ -64,7 +72,8 @@ The code supports the following datasets in the current implementation:
 
 Important note: dataset paths in [`utils.py`](/Users/luwenjing/Library/Mobile%20Documents/com~apple~CloudDocs/Desktop/ICML2026/UCAT/utils.py) are currently **hard-coded** for the original training environment. Before running experiments, please update those paths to your local dataset locations.
 
-## Training
+## Usage
+### Training
 
 Example single-label adversarial fine-tuning:
 
@@ -86,7 +95,7 @@ python -u ./main.py \
   --save_dir ./results/
 ```
 
-## Evaluation
+### Evaluation
 
 Single-label evaluation from a checkpoint:
 
@@ -129,7 +138,7 @@ You can also use the provided script:
 bash ./main.sh
 ```
 
-## Main Arguments
+### Main Arguments
 
 - `--Method`: experiment name used in log and checkpoint folders
 - `--dataset`: training dataset
@@ -147,7 +156,7 @@ bash ./main.sh
 - `--mode`: `train` or `test`
 - `--save_dir`: directory for logs and checkpoints
 
-## Notes
+### Notes
 
 - `main.py` is the primary entry point for single-label experiments.
 - `main-multilabel.py` is mainly used for COCO multi-label evaluation.
@@ -161,16 +170,5 @@ This repository builds upon prior open-source projects, especially:
 - [TeCoA](https://github.com/cvlab-columbia/ZSRobust4FoundationModel)
 - [OpenAI CLIP](https://github.com/openai/CLIP)
 - [AutoAttack](https://github.com/fra31/auto-attack)
-
-## Citation
-
-If you find this repository useful, please cite:
-
-```bibtex
-@article{ucat2025,
-  title={Calibrating Uncertainty for Zero-Shot Adversarial CLIP},
-  author={Lu, Wenjing and Tao, Zerui and Zhang, Dongping and Qiu, Yuning and Yang, Yang and Zhao, Qibin},
-  journal={arXiv preprint arXiv:2512.12997},
-  year={2025}
-}
-```
+- [TGA-ZSR](https://github.com/zhyblue424/TGA-ZSR)
+- [FARE](https://github.com/chs20/RobustVLM/tree/main)
